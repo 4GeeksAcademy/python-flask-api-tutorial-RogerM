@@ -11,10 +11,10 @@ def hello_world():
 
 @app.route('/todos', methods=['POST'])
 def add_new_todo():
-    request_body = request.get_json(force=True)
+    request_body = request.json(force=True)
     print("Incoming request with the following body", request_body)
     # aqui se agrega el todos,append para agregar una nueva tarea
-    todos.append(request.get_json(force=True))
+    todos.append(request.json(force=True))
     return jsonify(todos)
 
 
